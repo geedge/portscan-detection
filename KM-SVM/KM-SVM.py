@@ -176,16 +176,7 @@ def Kmeans(data):
     y = dummies.values
     Y = y[:,0]
     #聚类
-    KMEANS = KMeans(n_clusters = 30, max_iter = 300,n_init = 10,random_state = 0)
-    kmeans = KMEANS.fit(x)
-    Z = kmeans.labels_
-    inertia = KMEANS.inertia_
-    #Kmeans Results
-    kmeansR = pd.crosstab(Y,Z)
-    maxVal = kmeansR.idxmax()
-    print(kmeansR)
-    print(len(Z))
-    #Z = pso_kmeans(x,Y)
+    Z = pso_kmeans(x,Y)
     return Z
 
 def pso_kmeans(X,Y):
