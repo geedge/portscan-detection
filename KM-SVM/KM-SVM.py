@@ -117,7 +117,7 @@ def SVM(train_X, train_Y, test_X, test_Y):
     train_Y = [np.where(r == 1)[0][0] for r in train_Y]
     test_Y = [np.where(r == 1)[0][0] for r in test_Y]
     t1 = time.time()
-    clf = svm.SVC(decision_function_shape='ovr', max_iter=900, kernel='rbf')
+    clf = svm.SVC(decision_function_shape='ovr', max_iter=1000, kernel='rbf')
     model = clf.fit(train_X, train_Y)
     y_hat = model.predict(test_X)
     acc = accuracy_score(test_Y, y_hat)
